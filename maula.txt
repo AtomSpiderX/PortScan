@@ -1,0 +1,52 @@
+✅ Step 1: Install Dependencies
+Open PowerShell in the same folder and run:
+
+pip install -r requirements.txt
+
+
+✅ Step 2: Install the Tool
+In the same folder, run:
+
+
+pip install .
+
+⚠️ If it fails, try:
+
+pip install --user .
+
+✅ Step 3: Add Python Scripts Folder to PATH (If Needed)
+If the port-scanner command still doesn't work, do this:
+
+1.Run:
+
+python -m site --user-base
+
+2.Note the path like:
+it is exam 
+C:\Users\YourName\AppData\Roaming\Python\Python310
+
+3.Add this to your system's PATH:
+C:\Users\YourName\AppData\Roaming\Python\Python310\Scripts
+Go to Environment Variables > Edit Path > New > Paste the path
+
+✅ Step 4: Restart Terminal
+Close and reopen PowerShell.
+
+✅ Step 5: Run the Tool
+Now try:
+port-scanner --help
+
+Then scan a target:
+port-scanner scanme.nmap.org --ports 22,80,443
+
+✅ Step 6: Example Output
+
+Scanning target: scanme.nmap.org
+--------------------------------------------------
+[+] Port 22 is open (ssh)
+    Banner: SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.8
+    Potential CVEs:
+     - CVE-2018-15473
+     - CVE-2021-28041
+[+] Port 80 is open (http)
+    Banner: HTTP/1.1 403 Forbidden
